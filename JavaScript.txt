@@ -1,0 +1,62 @@
+What is a JavaScript?
+-JavaScript is a Scripting Language
+-JS is a High level programming Language
+-Js is a Weakly/loosely typed language.
+-JS is a LightWeight and dynamic language used to build user interface(Presentation layer).
+
+-JS Introduced in 1995 by brenden eich.
+-Netscape navigator.
+- the first program named it as "Mocha"
+-The first name for javascript is "Livescript" later it is renamed as "JavaScript".
+
+Applications of js:
+**********
+Mobile apps,smartwatch,gaming,web apps, server side apps, data(mongoDB).
+
+Varaibles:
+-The Varaibles are nothing but containers/memory blocks used to store the data.
+-Variables are case-sensitive.
+-Start with letters, _(underScore), $(dollarsign)
+-cant start with numbers
+-Reserved words(Keywords) not allowed.
+-Allow letters,_(underScore),$(dollarsign),numbers.
+
+Reuasable code:
+        var a=1
+        a=5
+        console.log(a+a)
+        Output:10
+
+-types of Varaibles:
+  1. var(1995-)
+  2. let (2015-es6)
+  3. const() (2015-es6)
+
+Idnetifiers- Identifiers are the name given for memory(Varaibles). 
+
+Redeclaring with var is accepted:
+Example-
+  var a=1
+  var a=5
+  document.write(a+a)
+  console.log(a+a)
+    Output: 10
+
+-Reassinging with let & var is accepted
+Example:
+int a=6
+a=7
+console.log(a)
+output:7
+
+Redeclaring with let is not accepted:
+Example:
+let a=1;
+let a=5;
+document.write(a+a)
+console.log(a+a)
+  Output: Error
+
+Redeclaring with const is not accepted
+
+Variables declared with 
