@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let name=prompt("Enter you Name: ");
+        //alert(name);
+        let aa=parseInt(prompt());
+        let bb=parseInt(prompt());
+        document.write(typeof(aa));
+        console.log(aa+bb);
+    </script>
+</body>
+</html>
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+JavaScript Operators:
+1. Arithemetic operators: +,-,*,/
+Division                         - /(Q)
+Modulus operator                 - %(R)
+Exponential(Raised to the power) -**++,--
+        let a=10;
+        let b=5;
+          b++
+          a--
+          document.write(b,"<br>")
+          document.write(a,"<br>")
+        document.write(a%b,"<br>")
+        //Remainder part
+        document.write(a/b,"<br>")
+        //Quotient part 
+        document.write(a*b,"<br>")
+        document.write(a**b)
+
+Assignment:
+var student="swetha"
++=
+-=
+/=
+%=
+*=
+
+Logical Operators:
+and  &&
+T and T=T
+or   ||
+T or F=F
+not !
+
+Relational(Comparision) Operators:
+<,>,>=,<=,==,!=,===,!===
+== - equality
+
+conditional operator; ternary operator(?)
+First it will evalautes an expression for a true or false;
+if the condition is true the first expression will execute
+otherwise next expression will execute.
+
+Syntax:
+Condition? e1:e2 
+
+window methods:
+alert()
+prompt(): to take input from the user (String type)
+        //let name=prompt("Enter you Name: ");
+        //alert(name);
+        let aa=parseInt(prompt());
+        let bb=parseInt(prompt());
+        document.write(typeof(aa));
+        console.log(aa+bb);
+
+
