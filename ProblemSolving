@@ -1,0 +1,107 @@
+Problem solving with javascript:
+1.
+        let n = prompt("Enter Number");
+        if(n%2==0 && n%3==0){
+            alert("Divisible by both 2 and 3");
+        }
+        else{
+            alert("Not divisible by both 2 and 3");
+        }
+
+2.
+        let a = prompt("Enter Number 1:");
+        let b = prompt("Enter Number 2:");
+        let c = prompt("Enter Number 3:");
+        if(a>b && a>c){
+            alert(a+" is the larget number of 3");
+        }
+        else if(b>c){
+            alert(b+" is the largest number of 3");
+        }
+        else{
+            alert(c+" is the largest number of 3");
+        }
+
+3.
+        let wdays = parseInt(prompt("Enter number of working days: "));
+        let absdays = parseInt(prompt("Enter number of days absent: "));
+        let per = (wdays-absdays)/wdays * 100;
+        if(per < 75){
+            alert("Not eligible to write the exam");
+        }
+        else{
+            alert("eligible to write the exam");
+        }
+
+4.
+        let sal = parseInt(prompt("Enter Salary:"));
+        let yos = parseInt(prompt("Enter Years of service:"));
+        if(yos>10){
+            alert("Bonus amt = "+(sal/100 * 10+sal));
+        }
+        else if(yos >=6){
+            alert("Bonus amt = "+(sal/100 * 8+sal));
+        }
+        else{
+            alert("Bonus amt = "+(sal/100 * 5+sal));
+        }
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        let n = parseInt(prompt("Enter Number"));
+        if(n%2==0 && n%3==0){
+            alert("Divisible by both 2 and 3");
+        }
+        else{
+            alert("Not divisible by both 2 and 3");
+        }
+
+        let a = parseInt(prompt("Enter Number 1:"));
+        let b = parseInt(prompt("Enter Number 2:"));
+        let c = parseInt(prompt("Enter Number 3:"));
+        if(a>b && a>c){
+            alert(a+" is the larget number of 3");
+        }
+        else if(b>c){
+            alert(b+" is the largest number of 3");
+        }
+        else{
+            alert(c+" is the largest number of 3");
+        }
+
+        let wdays = parseInt(prompt("Enter number of working days: "));
+        let absdays = parseInt(prompt("Enter number of days absent: "));
+        let per = (wdays-absdays)/wdays * 100;
+        if(per < 75){
+            alert("Not eligible to write the exam");
+        }
+        else{
+            alert("eligible to write the exam");
+        }
+*/
+        let sal = parseInt(prompt("Enter Salary:"));
+        let yos = parseInt(prompt("Enter Years of service:"));
+        if(yos>10){
+            alert("Bonus amt = "+(sal/100 * 10+sal));
+        }
+        else if(yos >=6){
+            alert("Bonus amt = "+(sal/100 * 8+sal));
+        }
+        else{
+            alert("Bonus amt = "+(sal/100 * 5+sal));
+        }
+
+        
+    </script>
+</body>
+</html>
