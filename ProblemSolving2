@@ -1,0 +1,67 @@
+
+5.
+let elec = parseInt(prompt("Enter units : "));
+        let amt=0;
+        if(elec<=50){
+            amt = amt+(elec*2);
+        }
+        else if(elec <=150){
+            amt = amt+(50*2);
+            amt = amt+((elec-50)*3);
+        }
+        else if(elec <= 250){
+            amt = amt+(50*2);
+            amt = amt+(100*3);
+            amt = amt+((elec-150)*5);
+        }
+        else{
+            amt = amt+(50*2);
+            amt = amt+(100*3);
+            amt = amt+(100*5);
+            amt = amt+((elec-250)*8);
+        }
+        amt = amt + (amt/100 * 20);
+        console.log("Amount = "+amt);
+
+6. Handshake Problem
+        function fact(n) { 
+            if(n==0 || n==1)
+                return 1;
+            var res = 1; 
+            for (var i = 2; i <= n; i++) 
+                res = res * i; 
+            return res; 
+        }
+
+        let num = parseInt(prompt("Enter number of students : "));
+        let res = fact(num)/(2*fact(num-2));
+        console.log(res);
+
+7.
+// let num=prompt("enter a number:")
+        // switch(true){
+        //     case num>0:
+        //         console.log("Number is Positive");
+        //         break;
+        //     case num==0:
+        //         numconsole.log("number is Zero");
+        //         break;
+        //     case num<0:
+        //         numconsole.log("Number is negative");
+        //         break;
+        //     default:
+        //         console.log("Invalid Input")
+        // }
+
+8.
+        // let day=prompt("Enter a day:")
+        // switch(true){
+        //     case day=='mon' || day=='tue' || day=='wed' || day=='thu':
+        //         console.log("Weekdays")
+        //         break;
+        //     case day=='fri' || day=='sat' || day=='sun':
+        //         console.log("Weekends")
+        //         break; 
+        //     default:
+        //         console.log("Invalid day")
+        // }
