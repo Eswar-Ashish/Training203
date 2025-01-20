@@ -1,0 +1,78 @@
+
+Loops:
+Executes a block of code several times
+
+1. for loop -  for(initialization; condition; update-expression){ - block of code}
+   for(let i=1; i<=5; i++){
+        console.log(i);
+    }
+
+    for(let i=2; i<=8; i=i+2){
+        console.log(i+3);          //i=2 --> i+3=5; i=i+2=4 --> i+3=7; i=i+2=6 --> i+3=9; i=i+2=8 --> i+3=11
+        document.write(i,"<br/>");
+    }
+
+    for(let i=1; i<=5; i++){
+        document.write("Chiru","<br/>");
+    }
+    
+    let arr = [1,2,3,4,5];
+    for(let i=0; i<arr.length; i++){
+        document.write(arr[i],"<br/>");
+    }
+
+    for(let i=1; i<=10; i++){
+        document.write("9 X ",i,"= ",i*9,"<br/>");
+    }
+
+    let arr = [1,2,3,4,5];
+    let sum=0;
+    for(let i=0; i<arr.length; i++){
+        sum=sum+arr[i];
+    }
+    document.write("Sum of array elements : ",sum);
+
+    
+2. for in
+3. for of
+4. while
+5. do while
+
+Loops:
+Executes a block of code several times
+
+1. for loop -  for(initialization; condition; update-expression){ - block of code}
+   for(let i=1; i<=5; i++){
+        console.log(i);
+    }
+
+    for(let i=2; i<=8; i=i+2){
+        console.log(i+3);          //i=2 --> i+3=5; i=i+2=4 --> i+3=7; i=i+2=6 --> i+3=9; i=i+2=8 --> i+3=11
+        document.write(i,"<br/>");
+    }
+
+    for(let i=1; i<=5; i++){
+        document.write("Chiru","<br/>");
+    }
+    
+    let arr = [1,2,3,4,5];
+    for(let i=0; i<arr.length; i++){
+        document.write(arr[i],"<br/>");
+    }
+
+    for(let i=1; i<=10; i++){
+        document.write("9 X ",i,"= ",i*9,"<br/>");
+    }
+
+    let arr = [1,2,3,4,5];
+    let sum=0;
+    for(let i=0; i<arr.length; i++){
+        sum=sum+arr[i];
+    }
+    document.write("Sum of array elements : ",sum);
+
+    
+2. for in
+3. for of
+4. while
+5. do while
