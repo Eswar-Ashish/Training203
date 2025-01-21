@@ -1,3 +1,297 @@
+What is a JavaScript?
+-JavaScript is a Scripting Language
+-JS is a High level programming Language
+-Js is a Weakly/loosely typed language.
+-JS is a LightWeight and dynamic language used to build user interface(Presentation layer).
+
+-JS Introduced in 1995 by brenden eich.
+-Netscape navigator.
+- the first program named it as "Mocha"
+-The first name for javascript is "Livescript" later it is renamed as "JavaScript".
+
+Applications of js:
+**********
+Mobile apps,smartwatch,gaming,web apps, server side apps, data(mongoDB).
+
+Varaibles:
+-The Varaibles are nothing but containers/memory blocks used to store the data.
+-Variables are case-sensitive.
+-Start with letters, _(underScore), $(dollarsign)
+-cant start with numbers
+-Reserved words(Keywords) not allowed.
+-Allow letters,_(underScore),$(dollarsign),numbers.
+
+Reuasable code:
+        var a=1
+        a=5
+        console.log(a+a)
+        Output:10
+
+-types of Varaibles:
+  1. var(1995-)
+  2. let (2015-es6)
+  3. const() (2015-es6)
+
+Idnetifiers- Identifiers are the name given for memory(Varaibles). 
+
+Redeclaring with var is accepted:
+Example-
+  var a=1
+  var a=5
+  document.write(a+a)
+  console.log(a+a)
+    Output: 10
+
+-Reassinging with let & var is accepted
+Example:
+int a=6
+a=7
+console.log(a)
+output:7
+
+Redeclaring with let is not accepted:
+Example:
+let a=1;
+let a=5;
+document.write(a+a)
+console.log(a+a)
+  Output: Error
+
+Reassinging with const is not accepted
+
+DataTypes:
+1. Primitive DataTypes
+2. Non-Primitive DataTypes
+to check data type - typeOf
+
+1. Primitiven data type : predefined ; we can store single values
+- Numbers : integers, floats
+- Strings : stream of characters enlosed in quotes
+---single, double, backtick quotes
+-Boolean : true or false
+-Null : empty value or no value
+-undefined : delcared variable with no value
+
+JavaScript Operators:
+1. Arithemetic operators: +,-,*,/
+Division                         - /(Q)
+Modulus operator                 - %(R)
+Exponential(Raised to the power) -**++,--
+        let a=10;
+        let b=5;
+          b++
+          a--
+          document.write(b,"<br>")
+          document.write(a,"<br>")
+        document.write(a%b,"<br>")
+        //Remainder part
+        document.write(a/b,"<br>")
+        //Quotient part 
+        document.write(a*b,"<br>")
+        document.write(a**b)
+
+Assignment:
+var student="swetha"
++=
+-=
+/=
+%=
+*=
+
+Logical Operators:
+and  &&
+T and T=T
+or   ||
+T or F=F
+not !
+
+Relational(Comparision) Operators:
+<,>,>=,<=,==,!=,===,!===
+== - equality
+
+conditional operator; ternary operator(?)
+First it will evalautes an expression for a true or false;
+if the condition is true the first expression will execute
+otherwise next expression will execute.
+
+Syntax:
+Condition? e1:e2 
+
+window methods:
+alert()
+prompt(): to take input from the user (String type)
+        //let name=prompt("Enter you Name: ");
+        //alert(name);
+        let aa=parseInt(prompt());
+        let bb=parseInt(prompt());
+        document.write(typeof(aa));
+        console.log(aa+bb);
+
+Conditional Statement:
+-To make the set of instructions execute only when the given condition is true
+-Used to decide whether the code has to be executed or skipped based on the given condition
+-line by line (sequence)
+
+block of code : set of instructions
+condition : An expression that evalautes a result(True or false)
+Ex: console.log(5>6)
+
+Methods:
+if
+if else
+else if
+switch
+ternary operator
+
+Problem solving with javascript:
+1.
+        let n = prompt("Enter Number");
+        if(n%2==0 && n%3==0){
+            alert("Divisible by both 2 and 3");
+        }
+        else{
+            alert("Not divisible by both 2 and 3");
+        }
+
+2.
+        let a = prompt("Enter Number 1:");
+        let b = prompt("Enter Number 2:");
+        let c = prompt("Enter Number 3:");
+        if(a>b && a>c){
+            alert(a+" is the larget number of 3");
+        }
+        else if(b>c){
+            alert(b+" is the largest number of 3");
+        }
+        else{
+            alert(c+" is the largest number of 3");
+        }
+
+3.
+        let wdays = parseInt(prompt("Enter number of working days: "));
+        let absdays = parseInt(prompt("Enter number of days absent: "));
+        let per = (wdays-absdays)/wdays * 100;
+        if(per < 75){
+            alert("Not eligible to write the exam");
+        }
+        else{
+            alert("eligible to write the exam");
+        }
+
+4.
+        let sal = parseInt(prompt("Enter Salary:"));
+        let yos = parseInt(prompt("Enter Years of service:"));
+        if(yos>10){
+            alert("Bonus amt = "+(sal/100 * 10+sal));
+        }
+        else if(yos >=6){
+            alert("Bonus amt = "+(sal/100 * 8+sal));
+        }
+        else{
+            alert("Bonus amt = "+(sal/100 * 5+sal));
+        }
+
+5.
+let elec = parseInt(prompt("Enter units : "));
+        let amt=0;
+        if(elec<=50){
+            amt = amt+(elec*2);
+        }
+        else if(elec <=150){
+            amt = amt+(50*2);
+            amt = amt+((elec-50)*3);
+        }
+        else if(elec <= 250){
+            amt = amt+(50*2);
+            amt = amt+(100*3);
+            amt = amt+((elec-150)*5);
+        }
+        else{
+            amt = amt+(50*2);
+            amt = amt+(100*3);
+            amt = amt+(100*5);
+            amt = amt+((elec-250)*8);
+        }
+        amt = amt + (amt/100 * 20);
+        console.log("Amount = "+amt);
+
+6. Handshake Problem
+        function fact(n) { 
+            if(n==0 || n==1)
+                return 1;
+            var res = 1; 
+            for (var i = 2; i <= n; i++) 
+                res = res * i; 
+            return res; 
+        }
+
+        let num = parseInt(prompt("Enter number of students : "));
+        let res = fact(num)/(2*fact(num-2));
+        console.log(res);
+
+7.
+// let num=prompt("enter a number:")
+        // switch(true){
+        //     case num>0:
+        //         console.log("Number is Positive");
+        //         break;
+        //     case num==0:
+        //         numconsole.log("number is Zero");
+        //         break;
+        //     case num<0:
+        //         numconsole.log("Number is negative");
+        //         break;
+        //     default:
+        //         console.log("Invalid Input")
+        // }
+
+8.
+        // let day=prompt("Enter a day:")
+        // switch(true){
+        //     case day=='mon' || day=='tue' || day=='wed' || day=='thu':
+        //         console.log("Weekdays")
+        //         break;
+        //     case day=='fri' || day=='sat' || day=='sun':
+        //         console.log("Weekends")
+        //         break; 
+        //     default:
+        //         console.log("Invalid day")
+        // }
+
+Loops:
+Executes a block of code several times
+
+1. for loop -  for(initialization; condition; update-expression){ - block of code}
+   for(let i=1; i<=5; i++){
+        console.log(i);
+    }
+
+    for(let i=2; i<=8; i=i+2){
+        console.log(i+3);          //i=2 --> i+3=5; i=i+2=4 --> i+3=7; i=i+2=6 --> i+3=9; i=i+2=8 --> i+3=11
+        document.write(i,"<br/>");
+    }
+
+    for(let i=1; i<=5; i++){
+        document.write("Chiru","<br/>");
+    }
+    
+    let arr = [1,2,3,4,5];
+    for(let i=0; i<arr.length; i++){
+        document.write(arr[i],"<br/>");
+    }
+
+    for(let i=1; i<=10; i++){
+        document.write("9 X ",i,"= ",i*9,"<br/>");
+    }
+
+    let arr = [1,2,3,4,5];
+    let sum=0;
+    for(let i=0; i<arr.length; i++){
+        sum=sum+arr[i];
+    }
+    document.write("Sum of array elements : ",sum);
+
+    
 2. for in
     const a = "akshith"
     for (let i in a){
@@ -26,9 +320,19 @@
             c++;
         }while(c<5)
 
-        for(let i=2; i<=8; i=i+2){ //i=2<8, i=2+2=4, i=4+2=6
-            if(i>4){               //2>4#F, 4>4#F,   6>4
-                break;             //                Breaks
-            }
-            console.log(i+1); //2+1=3,  4+1=5
-        }
+Break:
+for(let i=2; i<=8; i=i+2){ //i=2<8, i=2+2=4, i=4+2=6
+    if(i>4){               //2>4#F, 4>4#F,   6>4
+        break;             //                Breaks
+    }
+    console.log(i+1); //2+1=3,  4+1=5
+}
+
+Continue:
+for(let i=2; i<=8; i=i+2){ //i=2<8, i=2+2=4, i=4+2=6
+    if(i>4){               //2>4#F, 4>4#F,   6>4
+        continue;          //                Skips
+    }
+    console.log(i+1); //2+1=3,  4+1=5, 6+1=7, 8+1=9
+}
+
