@@ -1,0 +1,54 @@
+callback function:
+  -You can pass the callback function as an argument to another function
+  execution : the function recieving the callback will execute the callback at some point 
+  during its execution
+
+      function greet(name, callback) {
+        console.log(`hello, ${name}!`);
+        callback();
+      }
+      greet("Ashish");
+
+      function sayGoodbye(){
+        console.log("Goodbye");
+      }
+
+      greet("Ashish", sayGoodbye);
+
+    function mainFunction(callback) {
+        console.log("Executiong Main Function");
+        callback();
+      }
+
+      function callbackFunction(){
+        console.log("Execution callback function");
+      }
+
+      mainFunction(callbackFunction);
+
+  Using an anonymous an arrow function as callback function:
+      function greet(name, callback) {
+        console.log(`hello, ${name}!`);
+        callback();
+      }
+
+      greet("Ashish", function(){
+        console.log("Anonymous function");
+      });
+
+      greet("Ashish", ()=>console.log("Anonymous function"));
+
+setTimeout:
+      function fetchData(callback) {
+        console.log("Fetching data...");
+        setTimeout(function(){
+          console.log("Data Fetched....");
+          callback();
+        },2000);
+    }
+
+      function processData(){
+        console.log("Processing the fetched data...");
+      }
+
+      fetchData(processData);
