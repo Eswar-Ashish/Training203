@@ -1,0 +1,70 @@
+DOM (Document Object Model):
+--It is a programming interface in web development that allows us to interact and manipulate(change)
+  the html documents.
+--When the web page is loaded, the browser creates the DOM of the webpage
+--When an html file is loaded into the browser, the javascript cannot understand the html document directly.
+
+DOM is basically the representation of the same document but in the form of a tree like structure.
+html DOM allos javascript to access(to get) and modify all the elements in the html document.
+
+Keypoints:
+1. Structure : The DOM represents the structure of HTML documetn  as tree;
+               Each node in a tree represents the element, an attribute, text
+2. Manipulation : :Using js,you can interact with elements(buttons,h,p) we can modify,add, remove elements. change styles;
+3. Event Handling : 
+4. W3C - World Wide Web Cosortium
+
+--In DOM all HTML elements are defines as objects
+Property : value that you can be set to the objects (like changing content of an html element)
+Method : an Action (like add or delete function)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            color: red;
+        }
+        .b{
+            color: navy;
+        }
+        .c{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="a" class="b">Akshith</h1>
+    <h1 class="b" id="b">Rishi</h1>
+    <h1 class="b" id="c">Nithin</h1>
+    <h1 class="b">Jayadeep</h1>
+    <h1 class="c">Sreenath</h1>
+    <h1 class="a">Hrushi</h1>
+    <h1 class="a">Phani</h1>
+    <h1 class="a">Badulla</h1>
+    <h1 class="c">Sri</h1>
+</body>
+</html>
+
+Methods of DOM:
+1.Getting element by id:
+    let x=document.getElementById("a");
+    console.log(x);
+
+2.Getting element by class:
+--return all the elements having the same class name
+--return in the form of html collection
+    let x=document.getElementsByClassName('a');
+    console.log(x);
+
+3.Getting element by tagname:
+    let x=document.getElementsByTagName("h1");
+    console.log(x);
+    for(let i=0; i<x.length; i++){
+        console.log(x[i]);
+    }
+
+4.Getting an element by query selector:
