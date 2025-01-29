@@ -1,0 +1,52 @@
+3.Getting element by tagname:
+    let x=document.getElementsByTagName("h1");
+    console.log(x);
+    for(let i=0; i<x.length; i++){
+        console.log(x[i]);
+    }
+
+4.Getting an element by query selector:
+        let x=document.querySelector('h1');
+        console.log(x);
+
+Manipulate Elements:
+To create a HTML element
+•	createElement()
+•	the method used to create a html element
+•	let k = document.createElement('h1');
+•	        k.className = 'b';
+•	        k.textContent = 'Hello';
+•	        console.log(k)
+•	        document.body.appendChild(k);
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .a{
+        color: aqua;
+      }
+    </style>
+</head>
+<body>
+
+  <h1 class="a" id="a">Hello</h1>
+  <h1 class="a" id="b">hola</h1>
+  <h1 class="b" id="c">Namaste</h1>
+    <script>
+        // let js = document.getElementById('a');
+        // console.log(js);
+        // let q = document.getElementsByClassName('a');
+        // console.log(q);
+
+        let k = document.createElement('h1');
+        k.className = 'b';
+        k.textContent = 'Hello';
+        console.log(k)
+        document.body.appendChild(k);
+    </script>
+</body>
+</html>
