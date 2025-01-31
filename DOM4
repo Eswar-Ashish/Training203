@@ -1,0 +1,59 @@
+insertBefore():
+    <div id="a">
+        <h1>Ashish</h1>
+        <h1>Eswar</h1>
+    </div>
+    <div id="b">
+        <h2>Surya</h2>
+        <h2>Rishi</h2>
+    </div>
+    <script>
+        let n=document.createElement('h1');
+        n.textContent="Akshit";
+
+        let p = document.getElementById('a');
+        let l = document.getElementById('r');
+        p.insertBefore(n,l)
+        
+        let m=document.createElement('h2');
+        m.textContent="Heading 2";
+
+        let x = document.getElementById('b');
+        let y = document.getElementById('r');
+        x.insertBefore(m,y)
+    </script>
+
+Remove Element:
+    <script>
+        let n=document.createElement('h1');
+        n.textContent="Heading 1";
+
+        let p = document.getElementById('a');
+        let l = document.getElementById('r');
+        p.insertBefore(n,l)
+
+        let m=document.createElement('h2');
+        m.textContent="Heading 2";
+
+        let x = document.getElementById('b');
+        let y = document.getElementById('r');
+        x.insertBefore(m,y)
+        p.remove()
+    </script>
+
+Replace Element:
+    <script>
+        let n=document.createElement('h1');
+        n.textContent="Heading 1";
+
+        let p = document.getElementById('a');
+        let l = document.getElementById('r');
+        p.insertBefore(n,l)
+
+        let m=document.createElement('h2');
+        m.textContent="Heading 2";
+
+        let x = document.getElementById('b');
+        let y = document.getElementById('r');
+        p.replaceChildren(m);
+    </script>
