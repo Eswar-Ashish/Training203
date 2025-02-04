@@ -1,0 +1,47 @@
+Create element by using js:
+Document.createElement(‘h1’)
+Create element by using react.js:
+React.createElement(‘h1’)
+Syntax:
+React.createElement(type,props)
+Type=tagname(h1,p,div)
+Prop=id, className, Onclick
+
+ReactDom.createRoot()
+ReactDom.render() ---used to display the element
+Syntax:
+Reactelement --what to render
+Container –where to render
+a.js
+const b=React.createElement(
+    'h1',{id: 'a'}, "Iam Ashish"
+);
+const element=document.getElementById('root')
+const root=ReactDOM.createRoot(element)
+root.render(b)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="a.js"></script>
+</body>
+</html>
+
+Jsx:
+Javascript XML
+It is a syntax extension for javascript
+Here we write the html code and this will be translated into js
+Babel tools is used to convert html code to js code
+
+Points:
+<br/> should be closed
+<img/> is self-closing tag
+Class=className
