@@ -1,0 +1,93 @@
+Greeting React APP:
+
+import React from 'react';
+
+function Greeting({isLoggedIn}){
+    if(isLoggedIn){
+        return <h1>Welcome Back!</h1>
+    }else{
+        return <h1>Please Login</h1>
+    }
+}
+
+export default Greeting;
+
+import React from 'react';
+import Greeting from './greeting.js';
+import "./App.css"
+
+const App=()=>{
+  const isLoggedIn=false;
+  return(
+    <div className="greeting">
+      <Greeting isLoggedIn={isLoggedIn}/>
+    </div>
+  )
+}
+
+export default App;
+
+Displaying list of items:
+fruits.js:
+import React from "react";
+const FruitList=()=>{
+    const fruits = ['apple','cherry','orange','grapes'];
+    return(
+        <div>
+            <h1>Fruits List</h1>
+            <ul>
+                {fruits.map((fruit,index)=>(
+                    <li key={index}>{fruit}</li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+
+export default FruitList;
+
+App.js:
+import React from 'react';
+import "./App.css"
+import FruitList from './fruits';
+
+const App=()=>{
+  return(
+    <div className="fruits">
+      <FruitList/>
+    </div>
+  )
+}
+
+export default App;
+
+App.css:
+.container {
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+TODO List :
+import React from 'react';
+import "./App.css"
+
+const TodoList=()=>{
+  const todos=[
+    {id:1, task:"Drink Tea"},
+    {id:2, task:"Listen News"},
+    {id:3, task:"Cook"}
+  ];
+  return(
+    <ul className=''>
+      {todos.map((todo=>(
+        <li key={todo.id}>{todo.task}</li>
+      )))}
+    </ul>
+  )
+}
+export default TodoList;
