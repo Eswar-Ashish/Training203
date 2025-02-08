@@ -1,0 +1,76 @@
+Working Web-bulb:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex ;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        .light-bulb{
+            width:150px
+        }
+        .button{
+            margin-top: 300px;
+            padding: 10px 20px ;
+            font-size: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body id="body">
+    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png" class="light-bulb" id="bulbImage" alt ="" style="position: absolute; left: 0px; transition: left 2s;"/>
+    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png" class="light-bulb" id="bulbImage2" alt ="" style="position: absolute; right: 0px; transition: right 2s;"/>
+    <button class="button" id="toggleButton" onClick="toggleLight()">Turn On</button>
+    <script>
+        let isOn=false;
+        let bulbLeft = 0;
+        let bulbRight = 0;
+        function toggleLight(){
+            const body=document.getElementById("body")
+            const bulbImage=document.getElementById('bulbImage')
+            const bulbImage2=document.getElementById('bulbImage2')
+            const toggleButton=document.getElementById('toggleButton')
+            if(isOn=!isOn);
+            if(isOn){
+                body.style.backgroundColor='lightyellow ';
+                bulbImage.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png";
+                bulbImage2.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png";
+                toggleButton.innerText='Turn Off';
+                bulbLeft = window.innerWidth - 150;
+                bulbImage.style.left = bulbLeft + 'px';
+                bulbRight = window.innerWidth - 150;
+                bulbImage2.style.right = bulbRight + 'px';
+            }else{
+                body.style.backgroundColor='white';
+                bulbImage.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png";
+                bulbImage2.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png";
+                toggleButton.innerText="Turn On";
+                bulbLeft = 0;
+                bulbImage.style.left = bulbLeft + 'px';
+                bulbRight = 0;
+                bulbImage2.style.right = bulbRight + 'px';
+            }
+        }
+    </script>
+</body>
+</html>
+
+State:
+state in react:
+In React, state is like a container that holds the data or information for a component.
+This data can be changed over time based on user actions or events
+-It allows the component to remember things
+
+1. Functional Components:
+syntax:
+const[statevariable, setStatefunction] = useState(initialvalue)
+    1.statevariable: holds the current state(ex: name, colour)
+    2.setStatefunction: A function which is used to update the state
+    3.initialValue: The initial value of the state variable when the component first renders
+    
