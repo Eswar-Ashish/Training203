@@ -1,0 +1,37 @@
+
+useState():
+Counter App:
+import React, {useState} from 'react';
+
+const Counter=()=>{
+    const [count, setCount]=useState(0);
+    return(
+        <div>
+            <h1>{count}</h1>
+            <button onClick={()=>setCount(count+1)}>Increment</button>
+            <button onClick={()=>setCount(count-1)}>Decrement</button>
+        </div>
+    )
+}
+export default Counter;
+
+Theme Change App:
+import React, {useState} from 'react';
+import './App.css'
+
+const ThemeToggler=()=>{
+  const[theme, setTheme]=useState('light');
+
+  const toggleTheme=()=>{
+    setTheme(prevTheme=>(prevTheme==='light'?'dark':'light'))
+  }
+
+  return(
+    <div style={{backgroundColor:theme==='light'?'White':'black', color:theme==='light'?'black':'white', textAlign:'center'}}>
+      <h1>The current theme is {theme}</h1>
+      <button onClick={toggleTheme}>Toggle Theme</button>
+    </div>
+  );
+};
+
+export default ThemeToggler;
