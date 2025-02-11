@@ -22,7 +22,7 @@ import ProfileCard from './card';
 
 function App() {
   return (
-    <div className='App'>
+    <div className='profile-container' style={{display:'flex'}}>
     <ProfileCard greeting ='Hello' name='Ashish' image='https://static.vecteezy.com/system/resources/thumbnails/030/504/836/small_2x/avatar-account-flat-isolated-on-transparent-background-for-graphic-and-web-design-default-social-media-profile-photo-symbol-profile-and-people-silhouette-user-icon-vector.jpg'/>
     <ProfileCard greeting ='Namasthe' name='Guna' image='https://static.vecteezy.com/system/resources/thumbnails/030/504/836/small_2x/avatar-account-flat-isolated-on-transparent-background-for-graphic-and-web-design-default-social-media-profile-photo-symbol-profile-and-people-silhouette-user-icon-vector.jpg'/>
     </div>
@@ -30,6 +30,7 @@ function App() {
 }
 
 export default App;
+
 
 App.css:
 .profile-card {
@@ -56,6 +57,12 @@ App.css:
   border: 3px solid #007bff;
 }
 
+.profile-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
 
 .App {
   align-items: center;
