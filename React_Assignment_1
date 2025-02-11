@@ -1,0 +1,62 @@
+
+React Assignment-1 :
+
+card.js:
+import React from 'react';
+import './App.css';
+
+const ProfileCard = (props) => {
+    return (
+        <div className='profile-card'>
+            <h1>{props.greeting}, {props.name}</h1>
+            <img src={props.image} alt="Profile" />
+        </div>
+    );
+}
+
+export default ProfileCard;
+
+App.js:
+import './App.css';
+import ProfileCard from './card';
+
+function App() {
+  return (
+    <div className='App'>
+    <ProfileCard greeting ='Hello' name='Ashish' image='https://static.vecteezy.com/system/resources/thumbnails/030/504/836/small_2x/avatar-account-flat-isolated-on-transparent-background-for-graphic-and-web-design-default-social-media-profile-photo-symbol-profile-and-people-silhouette-user-icon-vector.jpg'/>
+    <ProfileCard greeting ='Namasthe' name='Guna' image='https://static.vecteezy.com/system/resources/thumbnails/030/504/836/small_2x/avatar-account-flat-isolated-on-transparent-background-for-graphic-and-web-design-default-social-media-profile-photo-symbol-profile-and-people-silhouette-user-icon-vector.jpg'/>
+    </div>
+  );
+}
+
+export default App;
+
+App.css:
+.profile-card {
+  width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: lightblue;
+  font-family: Arial, sans-serif;
+}
+
+.profile-card h1 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+}
+
+
+.App {
+  align-items: center;
+}
