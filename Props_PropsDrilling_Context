@@ -1,0 +1,76 @@
+props(properties) in React are used to pass from parent to child component
+
+prop drilling(): is the process of passing data from parent component to deeply child component through
+intermediate components, by passing data as props at each level of parent.
+
+//parent component
+function App(){
+  const data = "I am Ashish"
+  return(
+    <div>
+      <User1 data={data}/>
+    </div>
+  )
+}
+
+//user1 Component
+function User1({data}){
+  return <User2 data={data}/>
+}
+
+//user2 Component
+function User2({data}){
+  return <User3 data={data}/>
+}
+
+//user3 Component
+function User3({data}){
+  return <User4 data={data}/>
+}
+
+//user4 Component
+function User4({data}){
+  return <div>{data}</div>
+}
+
+export default App;
+
+
+createContext and useContext:
+import React, {createContext, useContext} from 'react';
+
+const DataContext = createContext();
+
+
+//parent component
+function App(){
+  const data = "I am Ashish"
+  return(
+    <DataContext.Provider value={data}>
+      <User1/>
+    </DataContext.Provider>
+  )
+}
+
+//user1 Component
+function User1(){
+  return <User2/>
+}
+
+//user2 Component
+function User2(){
+  return <User3/>
+}
+
+//user3 Component
+function User3(){
+  return <User4/>
+}
+
+//user4 Component
+function User4(){
+  const data = useContext(DataContext);
+  return <div>{data}</div>
+}
+
+export default App;
