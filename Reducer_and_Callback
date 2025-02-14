@@ -1,0 +1,83 @@
+React Reducer();
+A Reducer is a function that helps us to update based on action we take
+1. Current State : the current value of a state
+2. Action : add or remove items
+
+import React, { useReducer } from "react";
+import './App.css'
+
+function appleReducer(state, action){
+  switch(action.type){
+    case 'ADD_APPLE':
+      return state + 1;
+    case 'EAT_APPLE':
+      return state > 0 ? state - 1 : 0;
+    default:
+      return state;
+  }
+}
+
+function App(){
+  const [state, dispatch] = useReducer(appleReducer, 3);
+
+  return(
+    <div className="App">
+      <h1>Apple Counter</h1>
+      <p>Number of Apples: {state}</p>
+      <button onClick={() => dispatch({ type: 'ADD_APPLE' })}>ADD APPLE</button>
+      <button onClick={() => dispatch({ type: 'EAT_APPLE' })}>EAT APPLE</button>
+      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+        {
+          Array.from({ length: state }).map((_, index) => (
+            <img 
+              key={index} 
+              src="https://pngimg.com/d/apple_PNG12405.png" 
+              width='100' 
+              height='100' 
+              alt="apple"
+            />
+          ))
+        }
+      </div>
+    </div>
+  )
+}
+
+export default App;
+
+
+Callback in React:
+-In react, a callback is function that is passed as an argument to another function
+-Callbacks are often to communicate with dfferent components
+Ex: A parent component passing as Callback to a child
+
+App.js:
+import React, {useState} from 'react';
+import Child from './Child.js'
+
+const Parent=()=>{
+  const[message,setMessage]=useState('Hello World')
+
+  const changeMessage=()=>{
+    setMessage("Clicked the button");
+  };
+
+  return(
+    <div>
+      <h1>{message}</h1>
+      <Child changeMessage={changeMessage}/>
+    </div>
+  )
+}
+
+export default Parent;
+
+Child.js:
+import React from 'react';
+const Child=({changeMessage})=>{
+    return(
+        <button onClick={changeMessage}>Change Message</button>
+    );
+}
+
+export default Child;
