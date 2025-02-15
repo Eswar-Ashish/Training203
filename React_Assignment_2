@@ -1,0 +1,121 @@
+Build a small application that manages a list of items using React Context, useState, useReducer, and useMemo. The application should allow users to:
+• Add items to a list.
+• Remove items from the list.
+• Display the list with the number of items.
+• Use useReducer for state management.
+• Use useMemo to optimize rendering of the list.
+
+ListContext.js:
+import React, { createContext, useReducer, useContext } from "react";
+
+const listReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_ITEM":
+      return [...state, { id: Date.now(), name: action.payload }];
+    case "REMOVE_ITEM":
+      return state.filter((item) => item.id !== action.payload);
+    default:
+      return state;
+  }
+};
+
+const ListContext = createContext();
+
+export const ListProvider = ({ children }) => {
+  const [list, dispatch] = useReducer(listReducer, []);
+
+  return (
+    <ListContext.Provider value={{ list, dispatch }}>
+      {children}
+    </ListContext.Provider>
+  );
+};
+
+export const useList = () => useContext(ListContext);
+
+AddItem.js:
+import React, { useState } from "react";
+import { useList } from "./ListContext";
+
+const AddItem = () => {
+  const [inputValue, setInputValue] = useState("");
+  const { dispatch } = useList();
+
+  const addItem = () => {
+    if (inputValue.trim()) {
+      dispatch({ type: "ADD_ITEM", payload: inputValue });
+      setInputValue("");
+    }
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Add new item"
+      />
+      <button onClick={addItem}>
+        Add Item
+      </button>
+    </div>
+  );
+};
+
+export default AddItem;
+
+ItemList.js:
+import React, { useMemo } from "react";
+import { useList } from "./ListContext";
+
+const ItemList = () => {
+  const { list, dispatch } = useList();
+
+  const memoizedList = useMemo(() => list, [list]);
+
+  const removeItem = (id) => {
+    dispatch({ type: "REMOVE_ITEM", payload: id });
+  };
+
+  return (
+    <div>
+      <h2>Item List ({memoizedList.length})</h2>
+      <ul>
+        {memoizedList.map((item) => (
+          <li key={item.id}>
+            {item.name}
+            <button
+              onClick={() => removeItem(item.id)}
+            >
+              Remove
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ItemList;
+
+App.js:
+import React from "react";
+import { ListProvider } from "./ListContext.js";
+import AddItem from "./AddItem.js";
+import ItemList from "./ItemList.js";
+import "./App.css"
+
+const App = () => {
+  return (
+    <div className="App">
+    <ListProvider>
+        <h1 >Item Management</h1>
+        <AddItem />
+        <ItemList />
+    </ListProvider>
+    </div>
+    );
+};
+
+export default App;
