@@ -1,0 +1,105 @@
+Event Handling in React:
+-Event handling in react is how you make your app do somethingn when the user interacts with it,
+like clicking a button, submitting a form
+
+1. Clicking a button (onClick)
+2. Pressing akey (onPress)
+
+ex: onClick
+function App(){
+
+  const handleClick=()=>{
+    alert("Button Clicked");
+  }
+
+  return(
+    <button onClick={handleClick}> Click Me</button>
+  )
+}
+
+export default App;
+
+b. Change event(onChange);
+forms:
+This happens when you type in a text box
+key points:
+target is property of the event object, and is predefined by javascript for DOM events
+
+event.taget: always refers to the element that triggered the event
+event.target.value: 
+
+ex:
+import React,{ useState } from "react";
+import "./App.css"
+function App(){
+
+  const[text, setText]=useState("");
+
+  const handleChange=(event)=>{
+    setText(event.target.value)
+  }
+
+  return(
+    <div className="App">
+      <input type="text" value={text} onChange={handleChange}></input>
+      <p>Your Text: {text}</p>
+    </div>
+    )
+}
+
+export default App;
+
+onMouseEnter and onMouseLeave:
+import React,{ useState } from "react";
+import "./App.css"
+function App(){
+
+  const[isHovered, setIsHovered]=useState(false);
+
+  const handleMouseEnter=()=>{
+    setIsHovered(true);
+  }
+
+  const handleMouseLeave=()=>{
+    setIsHovered(false);
+  }
+
+  return(
+    <div className="App">
+      <button onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} 
+      style={{backgroundColor:isHovered ? "lightblue" : "lightgray",
+              color:isHovered ? "white" : "black"
+      }}> Hover Me</button>
+
+      {isHovered && <p>Mouse is over the button!</p>}
+    </div>
+    )
+}
+
+export default App;
+
+Key Events:
+(onKeyDown):
+key is presed on the keyboard
+Returns a keyboard event object and provide information about the key that was pressed
+
+import React,{ useState } from "react";
+import "./App.css"
+function App(){
+
+  const[key, setKey]=useState("");
+
+  const handleKeyDown=(event)=>{
+    setKey(event.key);
+  }
+
+  return(
+    <div className="App">
+      <h1>Welcome to Keyboard!</h1>
+      {key && <h2>Pressed key : {key}</h2>}
+      <input type="text" onKeyDown={handleKeyDown} placeholder="Press any key"/>
+    </div>
+    )
+}
+
+export default App;
